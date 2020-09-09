@@ -1,0 +1,16 @@
+{
+  "name": "cours_1",
+  "version": "1.0.0",
+  "description": "first course program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "keywords": [],
+  "author": "Hugow",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
