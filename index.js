@@ -1,4 +1,3 @@
-const handles = require('./handles.js');
 const express = require('express');
 //const url = require ('url');
 //const qs = require('querystring');
@@ -15,21 +14,20 @@ console.log("params :", params);
 var app = express();
 const monport = 8080
 app.set('port', monport);
+app.set('views', __dirname + "/views");
+app.set('view engine', 'ejs');
 
-app.listen(
-  app.get('port'),
-  () => console.log(`server listening on ${monport}`)
+app.listen(monport, () => console.log(`server listening on ${monport}`)
 )
 
   app.get('/', function (req, res) {
-    res.send('racine')
+    res.status(200).send('la racine');
   })
 
+  .get('/hello/:name', (req, res) => {
+    res.render ('Root.ejs', {name: req.params.name})
+  })
 
   .get('/hugo', function(req, res) {
     res.send('t est le boss')
   })
-
-// Declare an http server
-
-// curl localhost:8080 or go to http://localhost:8080
